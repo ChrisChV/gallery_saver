@@ -46,9 +46,6 @@ class GallerySaver {
     if (path == null || path.isEmpty) {
       throw ArgumentError(pleaseProvidePath);
     }
-    if (!isImage(path)) {
-      throw ArgumentError(fileIsNotImage);
-    }
     if (!isLocalFilePath(path)) {
       tempFile = await _downloadFile(path);
       path = tempFile.path;
